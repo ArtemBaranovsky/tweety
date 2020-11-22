@@ -1,7 +1,8 @@
-<div class="flex p-4 border-b border-b-grey-400">
+<div class="flex p-4 {{ $loop->last ? '' : 'border-b border-b-grey-400' }}">
     <div class="mr-2 flex-shrink-0">
+        <a href="{{ $tweet->user->path() }}"><img
 {{--        <a href="{{ route('profile', $tweet->user->name) }}"><img--}}
-        <a href="{{ route('profile', $tweet->user) }}"><img
+{{--        <a href="{{ route('profile', $tweet->user) }}"><img--}}
                 src="{{ $tweet->user->avatar }}"
                 {{--            src="https://i.pravatar.cc/50?u={{ $tweet->user->email }}"--}}
                 alt=""
@@ -13,7 +14,7 @@
 
     <div>
         <h5 class="font-bold mb-4">
-            <a href="{{ route('profile', $tweet->user) }}">
+            <a href="{{ $tweet->user->path() }}">
                 {{ $tweet->user->name }}
             </a>
         </h5>
