@@ -25,10 +25,16 @@
             </div>
 
             <div class="flex">
-                <a href="" class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs mr-2">Edit Profile</a>
-{{--                @if(auth()->user()->following($user))--}}
-                @component('components.follow-button', ['user' => $user])
-                @endcomponent
+{{--                @if (current_user()->is($user))--}}
+                @can('edit', $user)
+                    <a href="{{ $user->path('edit') }}"
+
+                       class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs mr-2">Edit Profile</a>
+                @endcan
+                {{--                @if(auth()->user()->following($user))--}}
+                    @component('components.follow-button', ['user' => $user])
+                    @endcomponent
+{{--                @endif--}}
             </div>
         </div>
 
