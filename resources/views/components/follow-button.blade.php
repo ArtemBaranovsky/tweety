@@ -1,6 +1,7 @@
 {{--@if(auth()->user()->isNot($user))--}}
 @if(current_user()->isNot($user))
-    <form method="POST" action="/profiles/{{ $user->name }}/follow">
+{{--    <form method="POST" action="/profiles/{{ $user->username }}/follow">--}}
+    <form method="POST" action="/profiles/{{ $user->username }}/follow">
         @csrf
         <button
             href=""

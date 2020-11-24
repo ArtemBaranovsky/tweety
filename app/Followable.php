@@ -19,10 +19,19 @@ trait Followable
 
     public function toggleFollow(User $user)
     {
-        if ($this->following($user)) { // replaced all of auth()->user() to $this
+        // Tip: You can also use the toggle() method.
+        //      We'll cover this in the next episode.
+        //      $this->follows())->toggle($user);
+
+        // instead use a toggle() method
+        /*if ($this->following($user)) { // replaced all of auth()->user() to $this
             return $this->unfollow($user);
         }
-        return $this->follow($user);
+        return $this->follow($user);*/
+
+        $this->follows()->toggle($user);
+
+
 /*        if ($this->following($user)) { // replaced all of auth()->user() to $this
             $this->unfollow($user);
         } else {

@@ -56,7 +56,7 @@
                        name="avatar"
                        id="avatar"
                        value="{{ $user->avatar }}"
-                       required
+{{--                       requireFollowabled--}}
                 >
                 <img src="{{ $user->avatar }}"
                      alt="your avatar"
