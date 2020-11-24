@@ -76,4 +76,9 @@ class User extends Authenticatable
 //        $path = route('profile', $this->name);
         return $append ? "{$path}/{$append}" : $path;
     }
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
 }
