@@ -22,10 +22,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/profiles/{user}/follow', 'FollowsController@store');
 //    Route::get('/profiles/{user}/edit', 'ProfilesController@edit');
     Route::get('/profiles/{user}/edit', 'ProfilesController@edit')->middleware('can:edit,user');
+
+    Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
+    Route::patch('/profiles/{user}', 'ProfilesController@update');
 });
 
 //Route::get('/profiles/{user:name}', 'ProfilesController@show')->name('profile');  // laravel 7^
-Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
 
 Auth::routes();
 

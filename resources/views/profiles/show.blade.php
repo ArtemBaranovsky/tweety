@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{--    {{ dd($user->avatar) }}--}}
 {{--    <h3>profile page for {{ $user->name }}</h3>--}}
 {{--    <hr>--}}
     <header class="mb-6 relative">

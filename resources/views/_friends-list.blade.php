@@ -2,7 +2,8 @@
 
 <ul>
 {{--    @foreach(range(1, 8) as $index)--}}
-    @foreach(auth()->user()->follows as $user)
+{{--    @foreach(auth()->user()->follows as $user)--}}
+    @forelse(auth()->user()->follows as $user)
         <li class="mb-4">
             <div {{--class="flex items-center text-sm"--}}>
 {{--                <a href="{{ route('profile', $tweet->user) }}">--}}
@@ -19,5 +20,7 @@
                 </a>
             </div>
         </li>
-    @endforeach
+    @empty
+        <li>No friends yet!</li>
+    @endforelse
 </ul>
